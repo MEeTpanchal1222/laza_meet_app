@@ -1,2 +1,2 @@
 import 'package:flutter/material.dart';
-  Color colormeet = Colors.yellow;
+var colormeet = Color(0xFF9775fa);

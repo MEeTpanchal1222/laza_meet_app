@@ -20,36 +20,20 @@ class MyApp extends StatelessWidget {
       ),
       home: SafeArea(child:
       Scaffold(
+        backgroundColor:colormeet,
 
         body: Center(
           child: Container(
             color: colormeet,
-            height:600,
-            width: 600,
             alignment: Alignment.center,
-            child: Container(
-              height: 350,
-              alignment: Alignment.center,
-              width: 350,
-              decoration: BoxDecoration(
-                color: colormeet,
-              ),
-              child: Container(
-                height: 300,
-                alignment: Alignment.center,
-                width: 300,
-                decoration:BoxDecoration(
-                  color: colormeet,
-                ) ,
-                child: Container(
-                  height: 300,
-                  width: 300,
-                  child:Center(
-                    child: Image.asset('assest/Rapido-logo.png'),
-                  )
 
-                ),
-              ),
+            child: Container(
+                height: 300,
+                width: 300,
+                child:Center(
+                  child: Image.asset('assest/img.png'),
+                )
+
             ),
           ),
         ),
