@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 height: 300,
                 width: 300,
                 child:Center(
-                  child: Image.asset('assest/img.png'),
+                  child: Image.asset('assest/mic.png'),
                 )
 
             ),

@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
 
+
+import 'package:flutter/material.dart';
+import 'package:repido_meet_app/uitels/list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
@@ -21,51 +24,301 @@ class MyApp extends StatelessWidget {
       home: SafeArea(child:
       Scaffold(
           backgroundColor: Colors.white,
+    bottomNavigationBar:BottomNavigationBar(items: [
+      BottomNavigationBarItem(icon:Icon(Icons.home),label: "Home"),
+      BottomNavigationBarItem(icon: Icon(Icons.favorite),label: "Favorite"),
+      BottomNavigationBarItem(icon: Icon(Icons.person),label:"Profile" ),
+    ],),
 
-          body: Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-
-                    height: 70, width: 70,
-                    padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                    child: Image.asset('assest/logo/menu.png'),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+            
+                      height: 70, width: 70,
+                      margin: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                      child: Image.asset('assest/logo/menu.png'),
+                    ),
+                    Spacer(),
+                    Container(
+                      height: 70, width: 70,
+                      margin: EdgeInsets.fromLTRB(0, 20, 20, 0),
+                      padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                      child: Image.asset('assest/logo/add.png'),
+                    ),
+                  ],
+                ),//top logo butomn
+            
+                Container(
+                    width: 500,
+                    height: 65,
+                    margin: EdgeInsets.fromLTRB(30, 20, 20, 0),
+                    child: Text.rich(
+                      TextSpan(text: 'Hello\n',style: TextStyle(fontSize: 28,decorationColor: Colors.black87,),
+                          children:[ TextSpan(text: 'wellcome to laza',style: TextStyle(fontSize: 18,decorationColor: Colors.black87,),) ]),
+                    )
+                ),//wellcome to laza
+                Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 350,
+                        margin: EdgeInsets.fromLTRB(30, 30,40, 20),
+                        decoration: BoxDecoration(color: Color(0xFFF5F6FA),
+                            borderRadius: BorderRadius.circular(13) ),
+                        child: Align(alignment: Alignment.centerLeft,
+                            child: Text(' 🔍 Search...',style: TextStyle(fontSize: 20,color: Colors.grey),)),
+                      ),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        decoration:BoxDecoration(borderRadius:BorderRadius.circular(15.5),color: Color(0xFF9775FA), ),
+                        child: Image(image: AssetImage('assest/logo/mic.png'),),
+                      )
+                    ]
+                ),//mic logo and sercha
+                Row(
+            
+                  children: [
+                    Container(
+                        height: 22,width: 250,
+                        margin: EdgeInsets.fromLTRB(20, 0, 50, 15),
+                        child: Text('  Choose Brand',style: TextStyle(fontSize:19 ,fontWeight: FontWeight.w900),),
+                    ),
+                    Spacer(),
+                    Container(
+                      height: 22,width:180,
+                      child: Center(child: Text('Viewall',style: TextStyle(fontSize:14 ,fontWeight: FontWeight.w900,color: Colors.grey),)),
+                    ),
+                  ],//chosse brand bar
+                ),
+                    SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                      width: 45,
+                      margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                      child: Image.asset('assest/rowscrowall_logo/addi.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text(' addidas')
+                    ],
                   ),
-                  Spacer(),
-                  Container(
-                    height: 70, width: 70,
-                    padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
-                    child: Image.asset('assest/logo/add.png'),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/puma.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text('  Puma')
+                    ],
                   ),
-                ],
-              ),
-              Container(
-                width: 500,
-                  height: 65,
-                  margin: EdgeInsets.fromLTRB(30, 20, 20, 0),
-                  child: Text.rich(
-                    TextSpan(text: 'Hello\n',style: TextStyle(fontSize: 28,decorationColor: Colors.black87,),
-                        children:[ TextSpan(text: 'wellcome to laza',style: TextStyle(fontSize: 18,decorationColor: Colors.black87,),) ]),
-                   )
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/fila.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text('   Fila')
+                    ],
                   ),
-               Row(
-                 children: [
-               Container(
-                 height: 50,
-                 width: 300,
-                   margin: EdgeInsets.fromLTRB(30, 30,40, 20),
-                   decoration: BoxDecoration(color: Color(0xFFF5F6FA),image:DecorationImage(image:AssetImage(''))  ,),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/nike.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text(' Nike')
+                    ],
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/puma.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text('  Puma')
+                    ],
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/addi.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text(' addidas')
+                    ],
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/nike.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text(' Nike')
+                    ],
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.5),
+                  height: 50,
+                  width: 115,
+                  child: Row(
+                    children: [
+                      Container( height: 30,
+                          width: 45,
+                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.5),color: Colors.white),
+                          child: Image.asset('assest/rowscrowall_logo/puma.png',height: 30,width: 20,alignment: Alignment.center,)),
+                      Text('  Puma')
+                    ],
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.3),color: Color(0xFFF5F6FA)),
+                )
+            
+               ],//row of brand
+                  ),
+                ),
+                Row(
+                  children: [
+                    Container(
+                      height: 22,width: 250,
+                      margin: EdgeInsets.fromLTRB(20, 20, 50, 15),
+                      child: Text('  NEW Arraival',style: TextStyle(fontSize:19 ,fontWeight: FontWeight.w900),),
+                    ),
+                    Spacer(),
+                    Container(
+                      height: 22,width:180,
+                      child: Center(child: Text('Viewall',style: TextStyle(fontSize:14 ,fontWeight: FontWeight.w900,color: Colors.grey),)),
+                    ),
+                  ],
+                ),// bar of new
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: listmeet1.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    return GridTile(
+                      child: Container(
+                        height: 257,
+                        width: 160,
+                        color: Colors.grey[300],
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(listmeet1[index]["image"],height: 160,width: 160,),
+                            Text(listmeet1[index]["name"]),
+                            Text(listmeet1[index]["waretype"]),
+                            Text("\$${listmeet1[index]["price"]}"),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
 
-               ),
-          ]
-               )
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: listmeet2.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 15,
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    return GridTile(
+                      child: Container(
+                        height: 257,
+                        width: 160,
+                        color: Colors.grey[300],
+                        child: Column(
 
-    ],
+                          children: [
+                            Image.asset(listmeet1[index]["image"],height: 160,width: 160,),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Align(alignment:Alignment.bottomRight,),
+                                Text(listmeet2[index]["name"]),
+                            Text(listmeet2[index]["waretype"]),
+                            Text("\$${listmeet2[index]["price"]}"),
+                                ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
 
-          )
+              ],
+            
+            ),
+          ),
       ),
       ),
     );
   }
 }
+
+
