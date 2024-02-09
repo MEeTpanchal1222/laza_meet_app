@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:repido_meet_app/uitels/list.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'main3.dart';
+
+class Productscreen extends StatefulWidget {
+  const Productscreen({super.key});
+  State<Productscreen> createState() => _ProductscreenState();
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class _ProductscreenState extends State<Productscreen> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -376,6 +376,7 @@ class MyApp extends StatelessWidget {
                   itemCount: listmeet1.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
+                    childAspectRatio: (100/140),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
@@ -386,20 +387,32 @@ class MyApp extends StatelessWidget {
                         width: 160,
                         decoration: BoxDecoration(color: Colors.black26,borderRadius: BorderRadius.all(Radius.circular(20.5)) ),
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              listmeet1[index]["image"],
-                              height: 100,
-                              width: 100,
-                            ),
-                            Text(listmeet1[index]["name"]),
-                            Text(listmeet1[index]["waretype"]),
-                            Text("\$${listmeet1[index]["price"]}"),
-                          ],
+
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                                  Container( height: 20,width: 300,margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
+                                      child: Icon(Icons.favorite_border,size: 28,)),
+
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const Productview()),
+                                  );
+                                },
+                          child:Image.asset(
+                                  listmeet1[index]["image"],
+                                  height: 190,
+                                  width: 190,
+                                ),
                         ),
-                      ),
+                              Text(listmeet1[index]["name"]),
+                              Text(listmeet1[index]["waretype"]),
+                              Text("\$${listmeet1[index]["price"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                            ],
+                          ),
+                        ),
                     );
                   },
                 ),
@@ -412,33 +425,48 @@ class MyApp extends StatelessWidget {
                   itemCount: listmeet2.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
+                    childAspectRatio: (100/140),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return GridTile(
-                      child: Container(
-                        height: 257,
-                        width: 160,
-                        
-                        decoration: BoxDecoration(color: Colors.black26,borderRadius: BorderRadius.all(Radius.circular(20.5)) ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              listmeet1[index]["image"],
-                              height: 120,
-                              width: 130,
-                            ),
+                        child: Container(
 
-                                Text(listmeet2[index]["name"]),
-                                Text(listmeet2[index]["waretype"]),
-                                Text("\$${listmeet2[index]["price"]}"),
-                          ],
+                          height: 257,
+                          width: 160,
+                          decoration: BoxDecoration(color: Colors.black26,borderRadius: BorderRadius.all(Radius.circular(20.5)) ),
+
+                          child:  Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+
+                              Container( height: 20,width: 300,margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
+                                  child: Icon(Icons.favorite_border,size: 28,)),
+
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const Productview()),
+                                  );
+                                },
+                               child: Image.asset(
+                                    listmeet1[index]["image"],
+                                    height: 190,
+                                    width: 190,
+                                  ),
+                             ),
+
+                                  Text(listmeet2[index]["name"]),
+                                  Text(listmeet2[index]["waretype"]),
+                                  Text("\$${listmeet2[index]["price"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                        );
+                    },
                 ),
               ],
             ),

@@ -1,44 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:repido_meet_app/uitels/colors.dart';
+import 'package:flutter/services.dart';
+import 'package:repido_meet_app/viewscreen/main1.dart';
+import 'package:repido_meet_app/viewscreen/main2.dart';
+import 'package:repido_meet_app/viewscreen/main3.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Color(0xFF181A20),
+  ));
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      theme: ThemeData(
-
-        useMaterial3: true,
-      ),
-      home: SafeArea(child:
-      Scaffold(
-        backgroundColor:colormeet,
-
-        body: Center(
-          child: Container(
-            color: colormeet,
-            alignment: Alignment.center,
-
-            child: Container(
-                height: 300,
-                width: 300,
-                child:Center(
-                  child: Image.asset('assest/mic.png'),
-                )
-
-            ),
-          ),
-        ),
-      ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Slashscrren(),
+        '/home': (context) => const Productscreen(),
+        '/view': (context) => const Productview(), // Add this line
+      },
     );
   }
 }
