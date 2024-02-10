@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:repido_meet_app/uitels/colors.dart';
+
+import 'main2.dart';
 
 
 
@@ -27,7 +31,10 @@ import 'package:repido_meet_app/uitels/colors.dart';
 
         body: InkWell(
     onTap: () {
-    Navigator.of(context).pushNamed('/home');
+      Timer(
+          Duration(seconds: 3),
+              () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (BuildContext context) => Productscreen())));
     },
     child:Center(
           child: Container(
