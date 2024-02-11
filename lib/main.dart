@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:repido_meet_app/viewscreen/main1.dart';
 import 'package:repido_meet_app/viewscreen/main2.dart';
 import 'package:repido_meet_app/viewscreen/main3.dart';
+import 'package:repido_meet_app/viewscreen/main4.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -17,12 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "LAZA",
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => const Slashscrren(),
         '/home': (context) => const Productscreen(),
-        '/view': (context) => const Productview(index: 0,), // Add this line
+        '/view': (context) => const Productview(index: 0,),
+        '/addcart':(context) => const CartScreen(),
       },
 
     );

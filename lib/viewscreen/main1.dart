@@ -32,9 +32,9 @@ import 'main2.dart';
         body: InkWell(
     onTap: () {
       Timer(
-          Duration(seconds: 3),
+          Duration(seconds: 1),
               () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (BuildContext context) => Productscreen())));
+              builder: (BuildContext context) => const Productscreen(),)));
     },
     child:Center(
           child: Container(

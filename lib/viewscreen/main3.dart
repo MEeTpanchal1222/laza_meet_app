@@ -12,7 +12,11 @@ class Productview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.add_box_rounded),label: 'Add to cart',),
+        BottomNavigationBarItem(icon: GestureDetector(
+          onTap: () {
+            listmeetcart.add(listmeet1[index]);
+          },
+            child: Icon(Icons.add_box_rounded)),label: 'Add to cart',),
         BottomNavigationBarItem(icon:
         GestureDetector(
             onTap: () {

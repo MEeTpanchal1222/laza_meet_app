@@ -3,11 +3,14 @@ import 'package:repido_meet_app/uitels/colors.dart';
 import 'package:repido_meet_app/uitels/list.dart';
 
 import 'main3.dart';
+import 'main4.dart';
 
 class Productscreen extends StatefulWidget {
   const Productscreen({super.key});
+
   State<Productscreen> createState() => _ProductscreenState();
 }
+
 class _ProductscreenState extends State<Productscreen> {
   // This widget is the root of your application.
   @override
@@ -47,7 +50,16 @@ class _ProductscreenState extends State<Productscreen> {
                       width: 70,
                       margin: EdgeInsets.fromLTRB(0, 20, 20, 0),
                       padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: Image.asset('assest/logo/add.png'),
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CartScreen(),
+                              ),
+                            );
+                          },
+                          child: Image.asset('assest/logo/add.png')),
                     ),
                   ],
                 ), //top logo butomn
@@ -113,7 +125,6 @@ class _ProductscreenState extends State<Productscreen> {
                             fontSize: 19, fontWeight: FontWeight.w900),
                       ),
                     ),
-
                     Container(
                       height: 22,
                       width: 100,
@@ -356,7 +367,6 @@ class _ProductscreenState extends State<Productscreen> {
                             fontSize: 19, fontWeight: FontWeight.w900),
                       ),
                     ),
-
                     Container(
                       height: 22,
                       width: 100,
@@ -377,7 +387,7 @@ class _ProductscreenState extends State<Productscreen> {
                   itemCount: listmeet1.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: (100/140),
+                    childAspectRatio: (100 / 140),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
@@ -386,87 +396,111 @@ class _ProductscreenState extends State<Productscreen> {
                       child: Container(
                         height: 257,
                         width: 160,
-                        decoration: BoxDecoration(color: Colors.black12,borderRadius: BorderRadius.all(Radius.circular(20.5)) ),
-
-
-                          child:  Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                                  Container( height: 20,width: 300,margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
-                                      child: Icon(Icons.favorite_border,size: 28,color: colormeet,)),
-
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => Productview(index: index)),
-                                  );
-                                },
-                          child:Image.asset(
-                                  listmeet1[index]["image"],
-                                  height: 190,
-                                  width: 190,
-                                ),
+                        decoration: BoxDecoration(
+                            color: Colors.black12,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.5))),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                height: 20,
+                                width: 300,
+                                margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
+                                child: Icon(
+                                  Icons.favorite_border,
+                                  size: 28,
+                                  color: colormeet,
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Productview(index: index)),
+                                );
+                              },
+                              child: Image.asset(
+                                listmeet1[index]["image"],
+                                height: 190,
+                                width: 190,
+                              ),
+                            ),
+                            Text(listmeet1[index]["name"]),
+                            Text(listmeet1[index]["waretype"]),
+                            Text(
+                              "\$${listmeet1[index]["price"]}",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
                         ),
-                              Text(listmeet1[index]["name"]),
-                              Text(listmeet1[index]["waretype"]),
-                              Text("\$${listmeet1[index]["price"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                            ],
-                          ),
-                        ),
+                      ),
                     );
                   },
                 ),
-               Container(
-                 height: 15,
-               ),
+                Container(
+                  height: 15,
+                ),
                 GridView.builder(
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   itemCount: listmeet1.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: (100/140),
+                    childAspectRatio: (100 / 140),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
                   itemBuilder: (BuildContext context, int index) {
                     return GridTile(
-                        child: Container(
-
-                          height: 257,
-                          width: 160,
-                          decoration: BoxDecoration(color: Colors.black12,borderRadius: BorderRadius.all(Radius.circular(20.5)) ),
-
-                          child:  Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-
-                              Container( height: 20,width: 300,margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
-                                  child: Icon(Icons.favorite_border,size: 28,color: colormeet,)),
-
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => Productview(index: index)),
-                                  );
-                                },
-                               child: Image.asset(
-                                    listmeet1[index]["image"],
-                                    height: 190,
-                                    width: 190,
-                                  ),
-                             ),
-
-                                  Text(listmeet1[index]["name"]),
-                                  Text(listmeet1[index]["waretype"]),
-                                  Text("\$${listmeet1[index]["price"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                            ],
-                          ),
+                      child: Container(
+                        height: 257,
+                        width: 160,
+                        decoration: BoxDecoration(
+                            color: Colors.black12,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.5))),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                height: 20,
+                                width: 300,
+                                margin: EdgeInsets.fromLTRB(165, 0, 0, 0),
+                                child: Icon(
+                                  Icons.favorite_border,
+                                  size: 28,
+                                  color: colormeet,
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Productview(index: index)),
+                                );
+                              },
+                              child: Image.asset(
+                                listmeet1[index]["image"],
+                                height: 190,
+                                width: 190,
+                              ),
+                            ),
+                            Text(listmeet1[index]["name"]),
+                            Text(listmeet1[index]["waretype"]),
+                            Text(
+                              "\$${listmeet1[index]["price"]}",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
                         ),
-                        );
-                    },
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
