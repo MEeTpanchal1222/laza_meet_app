@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-![first](https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/adf4b798-bfcb-4950-ba85-1f99064dbda8)
+![first](https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/adf4b798-bfcb-4950-ba85-1f99064dbda8) height:100;  widght:100;
 
 A few resources to get you started if this is your first Flutter project:
 
