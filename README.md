@@ -14,8 +14,8 @@ This project is a starting point for a Flutter application.
 <div align="center">
   <img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/503a91a4-dc30-45ab-9948-27c11451901f" width="200" alt="three_1">
   <img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/b71acaa5-48b7-4a09-a1ce-3d2a3b7b22b6" width="200" alt="three_2">
-  <img s![five](https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/fd8197a6-d043-43fc-9273-23cc499c304e)
-rc="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/acd7fcdf-5ddb-48e2-9438-5b4c3b12dce9" width="200" alt="three_3">
+  <img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/acd7fcdf-5ddb-48e2-9438-5b4c3b12dce9" width="200" alt="three_3">
+  <img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/fd8197a6-d043-43fc-9273-23cc499c304e"  width="200" alt="three_4"> 
 </div>
 
 <div align="center">
