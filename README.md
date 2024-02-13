@@ -27,8 +27,9 @@ This project is a starting point for a Flutter application.
 </div>
 
 <div align="center">
-  <img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/51bd35f9-7ad6-470e-9e77-82be4feb8fc2" width="200" alt="four">
+<img src="https://github.com/MEeTpanchal1222/laza_meet_app/assets/143181413/eefe6559-487b-43cd-bdb6-0eda4944a1f8" width="200" alt="four_1">
 </div>
+
 
 A few resources to get you started if this is your first Flutter project:
 
