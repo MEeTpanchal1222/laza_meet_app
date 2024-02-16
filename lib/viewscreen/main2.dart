@@ -427,12 +427,17 @@ class _ProductscreenState extends State<Productscreen> {
                                 width: 190,
                               ),
                             ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
                             Text(listmeet1[index]["name"]),
                             Text(listmeet1[index]["waretype"]),
                             Text(
                               "\$${listmeet1[index]["price"]}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                        ],
                             ),
                           ],
                         ),
@@ -489,12 +494,17 @@ class _ProductscreenState extends State<Productscreen> {
                                 width: 190,
                               ),
                             ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
                             Text(listmeet1[index]["name"]),
                             Text(listmeet1[index]["waretype"]),
                             Text(
                               "\$${listmeet1[index]["price"]}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                              ],
                             ),
                           ],
                         ),
