@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:repido_meet_app/uitels/colors.dart';
 import 'package:repido_meet_app/viewscreen/main2.dart';
@@ -44,16 +45,18 @@ class _CartScreenState extends State<CartScreen> {
                           (index) => Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
+
                         width: double.infinity,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(30),),
+
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SizedBox(width: 25,),
                             SizedBox( width: 100,height:130,
-                                child: Image.asset(listmeetcart[index]['image'],fit: BoxFit.fitWidth,)),
+                                child: Image.asset(listmeetcart[index]['image'],fit: BoxFit.fill,)),
                             SizedBox(width: 65,),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -88,9 +91,9 @@ class _CartScreenState extends State<CartScreen> {
                                       height: 30,
                                       width: 80,
                                       decoration: BoxDecoration(
-                                          color: colormeet,
+                                          color: Colors.black12,
                                           borderRadius:
-                                          BorderRadius.circular(30)),
+                                          BorderRadius.circular(20)),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: [
@@ -101,12 +104,9 @@ class _CartScreenState extends State<CartScreen> {
                                                 totalAmt = getTotal();
                                               });
                                             },
-                                            child: Text(
-                                              '<',
-                                              style: TextStyle(
-                                                  color: Colors.red,
-                                                  fontSize: 25,),
-                                            ),
+                                            child:  Icon(
+                                                CupertinoIcons.minus_circle_fill
+                                            )
                                           ),
                                           Text(
                                             '${listmeetcart[index]['qu']}',
@@ -121,11 +121,8 @@ class _CartScreenState extends State<CartScreen> {
                                                   totalAmt = getTotal();
                                                 });
                                               },
-                                              child: Text(
-                                                '>',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 25),
+                                              child: Icon(
+                                                CupertinoIcons.plus_circle_fill
                                               )),
 
                                         ],
@@ -157,7 +154,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(70, 100, 0, 0),
+                  padding: EdgeInsets.fromLTRB(70, 50, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -166,14 +163,26 @@ class _CartScreenState extends State<CartScreen> {
                         child: Text(
                           'Total : \$ ${totalAmt.toString()}',
                           style:  TextStyle(
-                              color: Colors.indigo,
+                              color: Colors.black,
                               fontSize: 38,
                               fontWeight: FontWeight.w600),
                         ),
                       )
                     ],
                   ),
-                )
+                ),
+               Padding(
+
+                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 100),
+                 child: Container(
+                   width: 200,
+                   height: 50,
+                   decoration: BoxDecoration(color: colormeet,borderRadius: BorderRadius.circular(50) ),
+                  child: Center(
+                    child: Text("Checkout",style: TextStyle(fontSize: 30,color: CupertinoColors.white),),
+                  ),
+                 ),
+               )
               ],
             ),
 
