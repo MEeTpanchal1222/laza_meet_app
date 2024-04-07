@@ -4,7 +4,7 @@ import 'package:repido_meet_app/uitels/list.dart';
 
 import 'main3.dart';
 import 'main4.dart';
-
+//class of product screen that is statefull and state is changing on  user inrtaction
 class Productscreen extends StatefulWidget {
   const Productscreen({super.key});
 
@@ -23,8 +23,9 @@ class _ProductscreenState extends State<Productscreen> {
       home: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.white,
-          bottomNavigationBar: BottomNavigationBar(
-            items: [
+          //bottomnavigationbar in bottomNavigationbar you can retun copntainer you can design your containr by6 your self ;
+          bottomNavigationBar:BottomNavigationBar(// that class defult bottomnavigationbar class that have simple look
+            items: [//items list all code for
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.favorite), label: "Favorite"),
@@ -32,7 +33,7 @@ class _ProductscreenState extends State<Productscreen> {
                   icon: Icon(Icons.person), label: "Profile"),
             ],
           ),
-          body: SingleChildScrollView(
+          body: SingleChildScrollView(//for scroll widget it work in row or column
             child: Column(
               children: [
                 Row(
@@ -40,11 +41,11 @@ class _ProductscreenState extends State<Productscreen> {
                     Container(
                       height: 70,
                       width: 70,
-                      margin: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                      margin: EdgeInsets.fromLTRB(20, 20, 0, 0),//margin
+                      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),//padding
                       child: Image.asset('assest/logo/menu.png'),
                     ),
-                    Spacer(),
+                    Spacer(),//spacer is use to give allspace to between
                     Container(
                       height: 70,
                       width: 70,
@@ -93,7 +94,7 @@ class _ProductscreenState extends State<Productscreen> {
                     decoration: BoxDecoration(
                         color: Color(0xFFF5F6FA),
                         borderRadius: BorderRadius.circular(13)),
-                    child: Align(
+                    child: Align(// widget that align his child widget
                         alignment: Alignment.centerLeft,
                         child: Text(
                           '  Search...',
@@ -139,7 +140,7 @@ class _ProductscreenState extends State<Productscreen> {
                     ),
                   ], //chosse brand bar
                 ),
-                SingleChildScrollView(
+                SingleChildScrollView( ///scrolview widget that scroll widget
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -381,18 +382,18 @@ class _ProductscreenState extends State<Productscreen> {
                     ),
                   ],
                 ), // bar of new
-                GridView.builder(
+                GridView.builder( // grideview  that bulider that build in grid
                   shrinkWrap: true,
-                  physics: ScrollPhysics(),
-                  itemCount: listmeet1.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: (100 / 140),
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                  physics: ScrollPhysics(),//physics that define scroling
+                  itemCount: listmeet1.length,//list
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(//main that slivergrid with fixed cross axis count;
+                    crossAxisCount: 2,//that fix cross count how grid in cross
+                    childAspectRatio: (100 / 140),//grid ratio
+                    crossAxisSpacing: 10,//axis spacing;
+                    mainAxisSpacing: 10,//verticliy spacing
                   ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return GridTile(
+                  itemBuilder: (BuildContext context, int index) {//iteambulider that we rerturn all code;
+                    return GridTile(//all code that in gridtile
                       child: Container(
                         height: 257,
                         width: 160,

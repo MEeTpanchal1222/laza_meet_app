@@ -40,8 +40,8 @@ class _CartScreenState extends State<CartScreen> {
             child: Column(
               children: [
                 Column(
-                  children: List.generate(
-                      listmeetcart.length,
+                  children: List.generate(//list.generate is we use for make widget by list data
+                      listmeetcart.length,//list length
                           (index) => Container(
                         margin: EdgeInsets.all(10),
                         height: 150,
@@ -54,7 +54,7 @@ class _CartScreenState extends State<CartScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(width: 25,),
+                            SizedBox(width: 25,),//sized box we use it for maxium for create space in ui
                             SizedBox( width: 100,height:130,
                                 child: Image.asset(listmeetcart[index]['image'],fit: BoxFit.fill,)),
                             SizedBox(width: 65,),
@@ -100,7 +100,7 @@ class _CartScreenState extends State<CartScreen> {
                                           InkWell(
                                             onTap: () {
                                               setState(() {
-                                                listmeetcart[index]['qu']--;
+                                                (listmeetcart[index]['qu']==1)?listmeetcart[index]['qu']==1:listmeetcart[index]['qu']--;
                                                 totalAmt = getTotal();
                                               });
                                             },
@@ -191,15 +191,15 @@ class _CartScreenState extends State<CartScreen> {
   }
 }
 double getTotal(){
+// total in list cart we use int i for index then
+  double totalAmt = 0;//defult 0
 
-  double totalAmt = 0;
+  for(int i = 0; i < listmeetcart.length; i++){//goes on length
 
-  for(int i = 0; i < listmeetcart.length; i++){
-
-    totalAmt += (listmeetcart[i]['price'] * listmeetcart[i]['qu']);
+    totalAmt += (listmeetcart[i]['price'] * listmeetcart[i]['qu']);//all values are ad to total variable ;
 
   }
 
-  return totalAmt;
+  return totalAmt;//return the variabile for print
 
 }
